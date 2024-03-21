@@ -30,7 +30,8 @@ class AlienInvasion:
         while True:
             self._check_events()
             self.ship.update()
-            self._update_bullets()            
+            self._update_bullets()  
+            self._update_alien()          
             self._update_screen()
             self.clock.tick(60)
             
@@ -78,6 +79,10 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
                 
+    def _update_alien(self):
+        """Update the positions of all aliens in the fleet"""
+        self.aliens.update()
+        
     def _create_fleet(self):
         """Create the fleet of aliens."""
         # Create an alien and keep adding aliens until there's no room left.
