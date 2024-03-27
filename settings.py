@@ -10,7 +10,7 @@ class Settings:
         self.bg_color = (230, 230, 230)
         
         # Ship settings
-        self.ship_speed = 2.5
+        self.ship_speed = 1.5
         
         # Alien settings
         self.alien_speed = 1.0
