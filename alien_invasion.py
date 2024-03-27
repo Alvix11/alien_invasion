@@ -98,7 +98,23 @@ class AlienInvasion:
             # Destroy existing bullets and create new fleet.
             self.bullets.empty()
             self._create_fleet()
-            
+    
+    def _ship_hits(self):
+        """Respond to the ship being hit by an alien."""
+        # Decrement ships_left.
+        self.stats.ships_left -= 1
+        
+        # Get rid of any remaining bullets and aliens.
+        self.bullets.empty()
+        self.aliens.empty()
+        
+        # Create a new fleet and center the ship.
+        self._create_fleet()
+        self.ship.center_ship()
+        
+        # Pause
+        sleep(0.5)
+    
     def _update_aliens(self):
         """Check if the fleet is at an edge, then update positions."""
         self._check_fleet_edges()
