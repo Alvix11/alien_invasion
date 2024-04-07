@@ -114,7 +114,6 @@ class AlienInvasion:
         
         if not self.aliens:
             # Destroy existing bullets and create new fleet.
-            self.game_active = False
             self.bullets.empty()
             self._create_fleet()
     
